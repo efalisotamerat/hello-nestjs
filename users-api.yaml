@@ -4,7 +4,7 @@ metadata:
   name: users-api
   description: The Users API
   tags:
-    - nonsens
+    - users
   links:
     - url: https://github.com/efalisotamerat/hello-nestjs
       title: GitHub Repo
