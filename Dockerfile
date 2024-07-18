@@ -1,23 +1,28 @@
-# Use the official Node.js image as a base
-FROM node:latest
+FROM node:alpine AS development
 
-# Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy package.json and yarn.lock to the working directory
-COPY package.json yarn.lock ./
+COPY package*.json ./
 
-# Install dependencies using Yarn
 RUN yarn install
 
-# Copy the rest of the application code to the working directory
-COPY . .
+COPY . . 
 
-# Build the NestJS application
 RUN yarn build
 
-# Expose the port your application runs on
-EXPOSE 4000
+FROM node:alpine as production
 
-# Command to run the application
-CMD ["yarn", "start:prod"]
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN yarn install --omit=dev
+
+COPY . .
+
+COPY --from=development /usr/src/app/dist ./dist
+
+CMD ["node", "dist/main"]

@@ -20,7 +20,6 @@ export class AppController {
   @ApiOperation({ summary: 'Get user by ID' })
   @ApiOkResponse({ description: 'User retrieved with ID' })
   create(@Param('id') id: number, @Res() res: Response): void {
-    console.log('Searching for user with ID:', id);
     const user = this.appService.getById(id);
 
     if (!user) {

@@ -9,14 +9,17 @@ metadata:
     - url: https://github.com/efalisotamerat/hello-nestjs
       title: GitHub Repo
       icon: github
-    - url: https://github.com/efalisotamerat/hello-nestjs/blob/main/oa.yaml
+    - url: https://github.com/efalisotamerat/hello-nestjs/blob/main/openapi.yaml
       title: API Spec
       icon: code
   annotations:
     backstage.io/techdocs-ref: dir:.
+    grafana/overview-dashboard: 'http://localhost:3333/d/UDdpyzz7z/users-api-metrics'
+    grafana/dashboard-selector: 'users-api'
+    grafana/alert-label-selector: 'alert=user_not_found'
 spec:
   type: openapi
   lifecycle: experimental
   owner: guests
   definition:
-    $text: ./oa.yaml
+    $text: ./openapi.yaml

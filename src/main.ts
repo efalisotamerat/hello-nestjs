@@ -11,6 +11,10 @@ async function bootstrap() {
     .setTitle('Users API')
     .setDescription('All public endpoints for the Users API')
     .setVersion('1.0')
+    .addServer(
+      'http://localhost:4000',
+      'Local development server (also with K8S)',
+    )
     .build();
 
   const document = SwaggerModule.createDocument(app, openApiConfig);

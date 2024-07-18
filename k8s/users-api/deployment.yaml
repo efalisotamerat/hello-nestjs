@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: users-api
+  name: users-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users-api
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: users-api
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '/metrics'
+        prometheus.io/port: '4000'
+    spec:
+      containers:
+        - image: efaliso/users-api:latest
+          name: users-api
+          ports:
+            - containerPort: 4000
