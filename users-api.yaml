@@ -14,7 +14,7 @@ metadata:
       icon: code
   annotations:
     backstage.io/techdocs-ref: dir:.
-    grafana/overview-dashboard: 'http://localhost:3333/d/PTSqcpJWk/users-api-dashboard?orgId=1'
+    grafana/overview-dashboard: 'http://localhost:3333/d/PTSqcpJWk/users-api-dashboard'
     grafana/dashboard-selector: 'users-api'
     grafana/alert-label-selector: 'alert=user_not_found'
 spec:

@@ -9,5 +9,11 @@ prometheus:
     enabled: false
 
 grafana:
+  grafana.ini:
+    security:
+      allow_embedding: true
+    server:
+      cookie_samesite: none
+      cookie_secure: true
   service:
     type: NodePort
