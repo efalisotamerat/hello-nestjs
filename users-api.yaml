@@ -17,6 +17,9 @@ metadata:
     grafana/overview-dashboard: 'http://localhost:3333/d/PTSqcpJWk/users-api-dashboard'
     grafana/dashboard-selector: 'users-api'
     grafana/alert-label-selector: 'alert=user_not_found'
+    backstage.io/kubernetes-id: 'users-api'
+    backstage.io/kubernetes-namespace: default
+    backstage.io/kubernetes-label-selector: 'app=users-api'
 spec:
   type: openapi
   lifecycle: experimental
