@@ -5,6 +5,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors();
+
   const openApiConfig = new DocumentBuilder()
     .setTitle('Users API')
     .setDescription('All public endpoints for the Users API')

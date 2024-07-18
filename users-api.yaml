@@ -12,6 +12,8 @@ metadata:
     - url: https://github.com/efalisotamerat/hello-nestjs/blob/main/oa.yaml
       title: API Spec
       icon: code
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
   lifecycle: experimental

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: hello-nestjs
-          image: my-nestjs-app:latest
+          image: hello-nestjs:latest
           imagePullPolicy: Never # Ensure Kubernetes uses the local image
           ports:
             - containerPort: 4000
