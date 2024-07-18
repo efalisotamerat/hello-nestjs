@@ -13,6 +13,8 @@ metadata:
       title: API Spec
       icon: code
   annotations:
+    github.com/project-slug: efalisotamerat/hello-nestjs
+    gocd.org/pipelines: backstage,backstage-pr,backstage-builder
     backstage.io/techdocs-ref: dir:.
     grafana/overview-dashboard: 'http://localhost:3333/d/PTSqcpJWk/users-api-dashboard'
     grafana/dashboard-selector: 'users-api'
