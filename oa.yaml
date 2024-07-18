@@ -1,0 +1,47 @@
+{
+  'openapi': '3.0.0',
+  'paths':
+    {
+      '/users':
+        {
+          'get':
+            {
+              'operationId': 'AppController_getUsers',
+              'summary': 'Get all users',
+              'parameters': [],
+              'responses': { '200': { 'description': 'List of users' } },
+              'tags': ['Users'],
+            },
+        },
+      '/users/{id}':
+        {
+          'get':
+            {
+              'operationId': 'AppController_create',
+              'summary': 'Get user by ID',
+              'parameters':
+                [
+                  {
+                    'name': 'id',
+                    'required': true,
+                    'in': 'path',
+                    'schema': { 'type': 'number' },
+                  },
+                ],
+              'responses':
+                { '200': { 'description': 'User retrieved with ID' } },
+              'tags': ['Users'],
+            },
+        },
+    },
+  'info':
+    {
+      'title': 'Users API',
+      'description': 'All public endpoints for the Users API',
+      'version': '1.0',
+      'contact': {},
+    },
+  'tags': [],
+  'servers': [{ 'url': 'http://localhost:56207/api' }],
+  'components': { 'schemas': {} },
+}

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nestjs-deployment
+  labels:
+    app: hello-nestjs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-nestjs
+  template:
+    metadata:
+      labels:
+        app: hello-nestjs
+    spec:
+      containers:
+        - name: hello-nestjs
+          image: my-nestjs-app:latest
+          imagePullPolicy: Never # Ensure Kubernetes uses the local image
+          ports:
+            - containerPort: 4000
