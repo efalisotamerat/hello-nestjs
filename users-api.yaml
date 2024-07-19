@@ -26,6 +26,6 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: efalisotamerat
+  owner: developers
   definition:
     $text: ./openapi.yaml
