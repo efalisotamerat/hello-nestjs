@@ -27,5 +27,18 @@ spec:
   type: openapi
   lifecycle: experimental
   owner: developers
+  system: users-portal
+  dependsOn:
+    - users-db
   definition:
     $text: ./openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: users-db
+  description: Stores users
+spec:
+  type: database
+  owner: developers
+  system: users-portal
